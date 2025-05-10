@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysqlcruddb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # Cambia esto por una contraseña root segura
+      MYSQL_DATABASE: microservicesdb       # Cambia esto por el nombre de tu base de datos
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
